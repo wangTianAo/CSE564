@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="../static/assignment2.js"></script>
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*.dot {
+fill: #401400;
+stroke: #fff;
+}*/
+
+.axis,
+.frame {
+  shape-rendering: crispEdges;
+}
+
+/*Styling for Lines*/
+.axis1 line {
+  stroke: #ddd;
+}
+
+/*Styling for path in Line Charts*/
+.axis1 path {
+  display: none;
+}
+
+.axis1 text{
+	x:5;
+}
+
+/*Styling for Scatter Plot Matrix Frames*/
+.frame {
+  fill: none;
+  stroke: #aaa;
+}
+
+</style>
+
+<body>
+	
+	<div class="container">
+		<div class="title"  align="center">
+			<span style="font-size:40px">
+		 		Pokémon Data
+			</span>
+			<br>
+			<span style="font-size:20px">
+		 		CSE564 Visualization Lab2 Tianao Wang 112819772
+			</span>
+		</div>
+	
+		<div class="buttons" align="center">
+			<button type="button" class="btn btn-primary" onclick="KMeansElbow()">KMeans Elbow</button>
+			<br>
+			<br>
+			<span style="font-size:20px">
+		 		Original Data
+			</span>
+			<button type="button" class="btn btn-primary" onclick="ScreePlotOriginalPCA()">Scree Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="ScatterplotforOriginalPCA()">Scatter Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotOriginalMDSEuc()">Scatter Plot MDS Euclidian</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotOriginalMDSCor()">Scatter Plot MDS Correlation</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotMatrixOriginal()">Scatter Plot Matrix of Top3 PCA Loaing</button>
+			<br>
+			<br>
+
+			<span style="font-size:20px">
+		 		Random Data
+			</span>
+			<button type="button" class="btn btn-primary" onclick="ScreePlotRandomSamplingPCA()">Scree Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="ScatterplotforRandomPCA()">Scatter Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotRandomMDSEuc()">Scatter Plot MDS Euclidian</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotRandomMDSCor()">Scatter Plot MDS Correlation</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotMatrixRandomSampling()">Scatter Plot Matrix of Top3 PCA Loaing</button>
+			<br>
+			<br>
+
+			<span style="font-size:20px">
+		 		Stratified Data
+			</span>
+			<button type="button" class="btn btn-primary" onclick="ScreePlotStratifiedSamplingPCA()">Scree Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="ScatterplotforStratifiedSamplingPCA()">Scatter Plot PCA</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotStratifiedSamplingMDSEuc()">Scatter Plot MDS Euclidian</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotStratifiedSamplingMDSCor()">Scatter Plot MDS Correlation</button>
+			<button type="button" class="btn btn-primary" onclick="scatterPlotMatrixStratifiedSampling()">Scatter Plot Matrix of Top3 PCA Loaing
+			</button>			
+		</div>
+	
+   		
+	</div>
+	
+	<div style="text-align:center;" class="svgContainer">
+		<svg>
+		</svg>
+	</div>
+	
+    </div>
+      
+
+
+</body>
+
+</html>
